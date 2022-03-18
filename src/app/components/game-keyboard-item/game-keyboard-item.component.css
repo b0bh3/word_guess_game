@@ -1,0 +1,13 @@
+.key {
+    user-select: none;
+    display: flex;
+    border-radius: 5px;
+    padding: 15px 3px;
+    margin: 4px 3px;
+    justify-content: center;
+    transition: box-shadow 100ms;
+}
+
+.key:hover {
+    cursor: pointer;
+}

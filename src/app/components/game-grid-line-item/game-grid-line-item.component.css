@@ -1,0 +1,64 @@
+.letter {
+   user-select: none;
+
+   display: flex;
+   justify-content: center;
+   align-items: center;
+
+   font-size: 45px;
+
+   width: 17vw;
+   height: 17vw;
+   
+   max-height: min(70px, calc(calc(100vh - 270px - 24px - 20px) / 6));
+   max-width: min(70px, calc(calc(100vh - 270px - 24px - 20px) / 6));
+   min-width: 40px;
+   min-height: 40px;
+
+   border-radius: 2px;
+   margin: 2px;
+   border: 2px solid;
+
+
+   animation-fill-mode: both;
+}
+ 
+ @keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+ }
+ 
+ .pulse {
+    animation-duration: 150ms;
+    animation-name: pulse;
+ }
+
+ @keyframes flipOver {
+    0% { transform: rotate3d(1, 0, 0, 0deg); }
+    50% { transform: rotate3d(1, 0, 0, 180deg); }
+    100% { transform: rotate3d(1, 0, 0, 360deg); }
+ }
+
+ .rotate {
+    animation-duration: 750ms;
+    animation-name: flipOver;
+ }
+
+@media screen and (max-width: 320px) {
+   .letter {
+      font-size: 35px;
+   }
+}
+
+@media screen and (max-height: 620px) {
+   .letter {
+      font-size: 35px;
+   }
+}
+
+@media screen and (max-height: 560px) {
+   .letter {
+      font-size: 28px;
+   }
+}

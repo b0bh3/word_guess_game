@@ -1,0 +1,15 @@
+<div #key
+    class="key"
+    (click)="onKeyPressed()"
+    [ngStyle]="{'background-color': bgColor, 'box-shadow': getBoxShadow(), 'color': getColor()}"
+>
+    <fa-icon
+        *ngIf="displayValue == 'BACKSPACE'"
+        [icon]="backspaceIcon"
+    ></fa-icon>
+    <ng-container
+        *ngIf="displayValue != 'BACKSPACE'"
+    >
+        {{ displayValue }}
+    </ng-container>
+</div>

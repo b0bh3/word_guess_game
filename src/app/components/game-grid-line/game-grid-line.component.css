@@ -1,0 +1,9 @@
+.grid-col {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.grid-col app-grid-line {
+    flex-basis: auto;
+}

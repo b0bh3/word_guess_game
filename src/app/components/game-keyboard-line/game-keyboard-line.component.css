@@ -1,0 +1,11 @@
+.container {
+    display: flex;
+    flex-grow: 1;
+}
+
+.container app-game-keyboard-item {
+    flex-grow: 1;
+    flex-shrink: 5;
+    flex-basis: 45px;
+}
+

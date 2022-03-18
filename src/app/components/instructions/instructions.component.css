@@ -1,0 +1,90 @@
+.container {
+    font-size: 14px;
+    line-height: 1.2;
+    
+}
+
+.section {
+    padding: 15px 0px;
+    border-bottom: 1px var(--accent-color) solid;
+}
+
+.section:last-of-type {
+    border-bottom: none;
+}
+
+.word {
+    display: flex;
+    margin-bottom: 3px;
+}
+
+.letter {
+    font-family: 'Baloo 2', monospace;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    border: 2px solid var(--default-color);
+    width: 40px;
+    height: 40px;
+    margin-right: 3px;
+    border-radius: 2px;
+    color: var(--letter-unchecked-color);
+}
+
+.word:nth-of-type(1) .letter:nth-of-type(1) {
+    border-color: var(--primary-color);
+    color: var(--letter-checked-color);
+    background-color: var(--primary-color);
+}
+
+.word:nth-of-type(2) .letter:nth-of-type(4) {
+    border-color: var(--secondary-color);
+    color: var(--letter-checked-color);
+    background-color: var(--secondary-color);
+}
+
+.word:nth-of-type(3) .letter:nth-of-type(2) {
+    color: var(--letter-checked-color);
+    background-color: var(--default-color);
+}
+
+.word:nth-of-type(4) .letter:nth-of-type(3) {
+    border-color: var(--secondary-color);
+    color: var(--letter-checked-color);
+    background-color: var(--secondary-color);
+}
+
+.word:nth-of-type(4) .letter:nth-of-type(4) {
+    border-color: var(--primary-color);
+    color: var(--letter-checked-color);
+    background-color: var(--primary-color);
+}
+
+@media screen and (max-height: 740px) {
+    .container {
+        font-size: 12px;
+        line-height: 1.1;
+    }
+}
+
+@media screen and (max-height: 640px) {
+    .letter {
+        font-size: 25px;
+        width: 35px;
+        height: 35px;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .container {
+        font-size: 11px;
+        line-height: 1.1;
+    }
+
+    .letter {
+        font-size: 25px;
+        width: 35px;
+        height: 35px;
+    }
+}

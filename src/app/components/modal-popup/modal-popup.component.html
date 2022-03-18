@@ -1,0 +1,28 @@
+<div class="background">
+    <div class="container">
+        <div class="popup">
+            <div class="close-button">
+                <app-icon-button
+                    [icon]="icon"
+                    (click)="dismissPopup()"
+                ></app-icon-button>
+            </div>
+            <div class="title">
+                <h4>{{ title }}</h4>
+            </div>
+            <div class="content">
+                <app-statistics
+                    *ngIf="title == 'STATISTICS'"
+                    (onNewGame)="newGame()"
+                    [gameOver]="gameOver"
+                ></app-statistics>
+                <app-settings
+                *ngIf="title == 'SETTINGS'"
+                ></app-settings>
+                <app-instructions
+                *ngIf="title == 'HOW TO PLAY'"
+                ></app-instructions>
+            </div>
+        </div>
+    </div>  
+</div>

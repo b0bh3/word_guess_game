@@ -1,0 +1,8 @@
+<div class="grid-col">
+    <app-game-grid-line-item
+        *ngFor="let item of lineItems; index as i"
+        [value]="retrieveLetter(i)"
+        [bgColor]="retrieveBackgroundColor(i)"
+        [borderColor]="retrieveBorderColor(i)"
+    ></app-game-grid-line-item>
+</div>

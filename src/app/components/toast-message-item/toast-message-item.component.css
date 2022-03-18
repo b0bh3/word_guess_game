@@ -1,0 +1,17 @@
+.toast-message {
+    background-color: gray;
+    border-radius: 8px;
+    padding: 10px 15px 10px 15px;
+    margin-bottom: 18px;
+    flex-basis: auto;
+
+    transition: display 1s;
+}
+
+.visible {
+    display: inline-block;
+}
+
+.notvisible {
+    display: none;
+}

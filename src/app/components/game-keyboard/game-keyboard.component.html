@@ -1,0 +1,8 @@
+<div class="container">
+    <app-game-keyboard-line
+        *ngFor="let line of lines; index as i"
+        [items]="lines[i]"
+        [displayItems]="displayLines[i]"
+        [resetColors]="resetColors"
+    ></app-game-keyboard-line>
+</div>

@@ -1,0 +1,9 @@
+<div class="container">
+    <app-game-keyboard-item
+        *ngFor="let item of items; index as i"
+        [value]="items[i]"
+        [displayValue]="displayItems[i]"
+        [bgColor]="getBgColorForLetter(items[i])"
+        (newKeypressEvent)="handleKeyPress($event)"
+    ></app-game-keyboard-item>
+</div>

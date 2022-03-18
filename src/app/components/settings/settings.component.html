@@ -1,0 +1,40 @@
+<div class="container">
+    <div class="line">
+        <div class="line-text">
+            <div class="line-title">
+                Dark Theme
+            </div>
+            <div class="line-subtitle">
+
+            </div>
+        </div>
+        <div class="line-toggle">
+            <label class="switch">
+                <input type="checkbox" 
+                    [checked]="preferences.dark_mode"
+                    (click)="toggleDarkMode()"
+                >
+                <span class="slider round"></span>
+            </label>
+        </div>
+    </div>
+    <div class="line">
+        <div class="line-text">
+            <div class="line-title">
+                High Contrast Mode
+            </div>
+            <div class="line-subtitle">
+                For improved color vision
+            </div>
+        </div>
+        <div class="line-toggle">
+            <label class="switch">
+                <input type="checkbox"
+                    [checked]="preferences.high_contrast_mode"
+                    (click)="toggleHighContrastMode()"
+                >
+                <span class="slider round"></span>
+            </label>
+        </div>
+    </div>
+</div>

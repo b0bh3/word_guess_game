@@ -1,0 +1,106 @@
+<div class="container">
+    <div class="game-stats">
+        <div class="stat-item">
+            <div class="stat-item-value">
+                {{ statData.gamesPlayed }}
+            </div>
+            <div class="stat-item-description">
+                <p>Played</p>
+            </div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-item-value">
+                {{ statData.percentWon }}
+            </div>
+            <div class="stat-item-description">
+                <p>Win %</p>
+            </div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-item-value">
+                {{ statData.currentStreak }}
+            </div>
+            <div class="stat-item-description">
+                <p>Current</p>
+                <p>Streak</p>
+            </div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-item-value">
+                {{ statData.maxStreak }}
+            </div>
+            <div class="stat-item-description">
+                <p>Max</p>
+                <p>Streak</p>
+            </div>
+        </div>
+    </div>
+    <div class="guess-distribution">
+        <div class="dist-container">
+            <div class="dist-title">
+                <h4>GUESS DISTRIBUTION</h4>
+            </div>  
+            <div class="dist-line">
+                <div class="dist-number">
+                    1
+                </div>
+                <div class="dist-bar" #gdb1></div>
+                <div class="dist-bar-val">
+                    {{ statData.guessDistribution[1] }}
+                </div>
+            </div>
+            <div class="dist-line">
+                <div class="dist-number">
+                    2
+                </div>
+                <div class="dist-bar" #gdb2></div>
+                <div class="dist-bar-val">
+                    {{ statData.guessDistribution[2] }}
+                </div>
+            </div>
+            <div class="dist-line">
+                <div class="dist-number">
+                    3
+                </div>
+                <div class="dist-bar" #gdb3></div>
+                <div class="dist-bar-val">
+                    {{ statData.guessDistribution[3] }}
+                </div>
+            </div>
+            <div class="dist-line">
+                <div class="dist-number">
+                    4
+                </div>
+                <div class="dist-bar"  #gdb4></div>
+                <div class="dist-bar-val">
+                    {{ statData.guessDistribution[4] }}
+                </div>
+            </div>
+            <div class="dist-line">
+                <div class="dist-number">
+                    5
+                </div>
+                <div class="dist-bar"  #gdb5></div>
+                <div class="dist-bar-val">
+                    {{ statData.guessDistribution[5] }}
+                </div>
+            </div>
+            <div class="dist-line">
+                <div class="dist-number">
+                    6
+                </div>
+                <div class="dist-bar"  #gdb6></div>
+                <div class="dist-bar-val">
+                    {{ statData.guessDistribution[6] }}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="new-game"
+        *ngIf="gameOver"
+    >
+        <button
+            (click)="newGame()"
+        >New Game</button>
+    </div>
+</div>

@@ -1,0 +1,13 @@
+.container {
+    position: absolute;
+    width: 100%;
+    height: calc(100% - 80px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+app-game-grid {
+    flex-grow: 1;
+}

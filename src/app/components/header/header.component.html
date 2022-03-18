@@ -1,0 +1,25 @@
+<div class="header">
+    <div class="container">
+
+        <div class="nav">
+            <app-icon-button
+                [icon]="faQuestions"
+                (click)="showHowToPlay()"
+            ></app-icon-button>
+        </div>
+        
+        <h1>WordGuess</h1>     
+
+        <div class="nav">
+            <app-icon-button
+                [icon]="faStats"
+                (click)="showStats()"
+            ></app-icon-button>
+            <app-icon-button
+                [icon]="faSettings"
+                (click)="showSettings()"
+            ></app-icon-button>
+        </div>
+
+    </div>
+</div>
