@@ -38,7 +38,7 @@ export class WordService {
   }
 
   async loadKnownWords() {
-    await fetch('assets/known_fivecharacter_words.txt', {mode: 'no-cors'})
+    await fetch('./assets/known_fivecharacter_words.txt', {mode: 'no-cors'})
       .then(response => response.text())
       .then((data) => {
         this._knownWords = data.split('\r\n');
@@ -48,7 +48,7 @@ export class WordService {
   }
 
   async loadAllWords() {
-    await fetch('assets/all_fivecharacter_words.txt', {mode: 'no-cors'})
+    await fetch('./assets/all_fivecharacter_words.txt', {mode: 'no-cors'})
       .then(response => response.text())
       .then((data) => {
         this._allWords = data.split('\r\n');
