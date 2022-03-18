@@ -56,9 +56,9 @@ export class GameKeyboardLineComponent implements OnInit {
         let letterBgColor = this.letterService.getLetterBackgroundColor(lastLine, index);
         // only set if not set or new val is more important (e.g. green > orange > lightgrey > lightergrey)
         const mapValue = this._bgColorMap.get(letter);
-        if( (( mapValue == Colors.Orange || mapValue == Colors.LighterGrey)
-          && letterBgColor == Colors.Green ) || 
-          ( mapValue == Colors.LighterGrey && ( letterBgColor == Colors.Orange || Colors.LightGrey )) ) 
+        if( (( mapValue == Colors.Secondary || mapValue == Colors.LighterGrey || mapValue == Colors.LightGrey || mapValue == Colors.Default)
+          && letterBgColor == Colors.Primary ) || 
+          ( mapValue == Colors.LighterGrey && ( letterBgColor == Colors.Secondary || Colors.LightGrey )) ) 
         {
           this._bgColorMap.set(letter, letterBgColor);
         }

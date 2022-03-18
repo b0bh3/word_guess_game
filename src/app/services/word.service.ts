@@ -32,6 +32,9 @@ export class WordService {
   private _subjectNewWord = new Subject<string>();
   private _subjectGameOver = new Subject<boolean>();
 
+  private _chosenWordMessage: Message;
+  private _chosenWordToastIndex: number;
+
   constructor(private letterService: LetterService, private toastService: ToastService, private statisticService: StatisticService) { 
     this.loadAllWords();
     this.loadKnownWords().then(() => this.chooseRandomWord());
@@ -67,6 +70,12 @@ export class WordService {
 
   reset() {
     this.chooseRandomWord();
+    if(this._chosenWordMessage != null && this._chosenWordToastIndex != null) {
+      this._chosenWordMessage.display = false;
+      this.toastService.editMessage(this._chosenWordToastIndex, this._chosenWordMessage);
+      this._chosenWordMessage = null;
+      this._chosenWordToastIndex = null;
+    }
   }
 
   onNewWordSubmitted(): Observable<string> {
@@ -89,7 +98,8 @@ export class WordService {
 
   gameLost() {
     let msg = new Message(this._chosenWord.toUpperCase());
-    this.toastService.sendMessage(msg);
+    this._chosenWordMessage = msg;
+    this._chosenWordToastIndex = this.toastService.sendMessage(msg);
     this.statisticService.addLoss();
     setTimeout(() => {
       this._subjectGameOver.next(false);
@@ -145,8 +155,8 @@ export class WordService {
       const letterInWordArray = this.checkAgainstChosenWord(word);
       // console.log(letterInWordArray);
       letterInWordArray.forEach((letterInWord, index) => {
-        let color = letterInWord.isPresent ?  Colors.Orange : Colors.Default;
-        color = letterInWord.inRightPlace ? Colors.Green : color;
+        let color = letterInWord.isPresent ?  Colors.Secondary : Colors.Default;
+        color = letterInWord.inRightPlace ? Colors.Primary : color;
         this.letterService.setLetterColor(index, color);
       });
       // Game has been won

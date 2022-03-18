@@ -10,7 +10,7 @@ export class GameGridLineItemComponent implements OnInit {
   @Input() set bgColor(bgColor: string) {
     this.myBgColor = bgColor;
 
-    if(bgColor == Colors.Orange || bgColor == Colors.Green || bgColor == Colors.Default) {
+    if(bgColor == Colors.Secondary || bgColor == Colors.Primary || bgColor == Colors.Default) {
       this.color = Colors.CheckedLetter;
     }
     else {
