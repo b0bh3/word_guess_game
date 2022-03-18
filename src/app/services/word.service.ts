@@ -41,7 +41,7 @@ export class WordService {
     await fetch('./assets/known_fivecharacter_words.txt', {mode: 'no-cors'})
       .then(response => response.text())
       .then((data) => {
-        this._knownWords = data.split('\r\n');
+        this._knownWords = data.split(',');
         console.log(`Successfully loaded ${this._knownWords.length} known words`);
       })
       .catch(error => console.error(error));
@@ -51,7 +51,7 @@ export class WordService {
     await fetch('./assets/all_fivecharacter_words.txt', {mode: 'no-cors'})
       .then(response => response.text())
       .then((data) => {
-        this._allWords = data.split('\r\n');
+        this._allWords = data.split(',');
         console.log(`Successfully loaded ${this._allWords.length} words`);
       })
       .catch(error => console.error(error));
@@ -60,7 +60,7 @@ export class WordService {
   chooseRandomWord() {
     const index = Math.floor(Math.random() * (this._knownWords.length - 0));
     this._chosenWord = this._knownWords[index];
-    console.log(`Chosen Word: ${this._chosenWord}`);
+    // console.log(`Chosen Word: ${this._chosenWord}`);
     this._chosenWordLetters = this._chosenWord.split('');
     // console.log(this._chosenWordLetters);
   }
